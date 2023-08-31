@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: post-dep
+  labels:
+    type: post-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: post-app
+  template:
+    metadata:
+      name: post-pod
+      labels:
+        type: post-app
+    spec:
+      containers:
+        - name: mypost
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: ch
+
+

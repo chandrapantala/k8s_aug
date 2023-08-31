@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tom-pod
+  labels:
+    type: appser
+spec:
+  containers:
+    - name: mytom
+      image: tomee
+      ports:
+        - containerPort: 8080
+          hostPort: 8080
+  tolerations:
+    - key: slave1
+      operator: Equal
+      value: ch
+      effect: NoSchedule
+

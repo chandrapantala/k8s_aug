@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: post-ser
+  labels:
+    author: cn
+spec:
+  ports:
+    - targetPort: 5432
+      port: 5432
+  selector:
+    type: webser

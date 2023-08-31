@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red-dep
+  labels:
+    type: red-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: red-app
+  template:
+    metadata:
+      name: red-pod
+      labels:
+        type: red-app
+    spec:
+      containers:
+        - name: myred
+          image: redis
+
+

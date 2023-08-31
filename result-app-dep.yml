@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: res-dep
+  labels:
+    type: result-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: result-app
+  template:
+    metadata:
+      name: res-pod
+      labels:
+        type: result-app
+    spec:
+      containers:
+        - name: myresult
+          image: dockersamples/examplevotingapp_result
+
+

@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: http-pod
+  labels:
+    type: proxy
+spec:
+  containers:
+    - name: httpmy
+      image: httpd
